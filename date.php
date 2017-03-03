@@ -7,11 +7,6 @@ ${_INIT_CONFIG}[_CLASS] = __NAMESPACE__.'\date';
 
 class date extends \PMVC\PlugIn
 {
-    public function init()
-    {
-        echo "I'm init\n";
-    }
-
     public function getSeqKeys($days, $timestamp = null, $format = null)
     {
         if (is_null($timestamp)) {
