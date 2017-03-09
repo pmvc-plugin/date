@@ -25,8 +25,10 @@ class date extends \PMVC\PlugIn
     public function getDate($timestamp, $format = null)
     {
         if (is_null($format)) {
-            $date = date('Y/n/d', $timestamp);
+            $date = date('Y/m/d', $timestamp);
             return explode('/', $date);
+        } elseif (is_callable($format)) {
+            return call_user_func($format, $timestamp);
         } else {
             return date($format, $timestamp);
         }
